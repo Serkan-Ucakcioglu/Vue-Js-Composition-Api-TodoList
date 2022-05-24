@@ -20,7 +20,7 @@ const sends = () => {
         class="todoInput"
         type="text"
       />
-      <SendButton :todoText="todoText"  @les="sends" />
+      <SendButton :todoText="todoText"  @send="sends" />
      
     </div>
   </section>
