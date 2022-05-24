@@ -6,7 +6,7 @@ import TodoListData from "./components/TodoListData.vue";
 import { computed, onMounted, provide, ref } from "vue";
 import SendButtonVue from "./components/SendButton.vue";
 const buttonName = ref('Button')
-provide('buttonName','Button')
+provide('buttonName','Buttons')
 const TodoList = ref([]);
 
 onMounted(() => {
