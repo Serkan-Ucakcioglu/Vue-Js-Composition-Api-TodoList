@@ -27,7 +27,4 @@ button {
   color: white;
   border-radius: 5px;
 }
-.disabled{
-
-}
 </style>

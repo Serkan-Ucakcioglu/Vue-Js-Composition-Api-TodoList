@@ -18,7 +18,7 @@ onMounted(() => {
   }
 });
 
-const addTodo = (todoText) => {
+const addtodo = (todoText) => {
   if (todoText.length > 4) {
 
     TodoList.value.push({
@@ -44,7 +44,7 @@ const todos = computed(() => {
 
 <template>
   <HeaderTitle msg="Todo List Vue Js" />
-  <TodoForm  @sends="addTodo" />
+  <TodoForm  @onsends="addtodo" />
   <TodoListData @remove="removeItem" :mydata="TodoList" />
   <TodoLength  :todo="todos" />
 </template>
