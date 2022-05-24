@@ -1,18 +1,18 @@
 <script setup>
-import { ref, defineEmits } from "vue";
+import { ref, defineEmits ,inject} from "vue";
 const todoText = ref("");
 const emit = defineEmits(["les"]);
 const send = () => {
 emit("les", todoText.value);
 
 };
-
+const buttonName = inject('buttonName')
 
 
 </script>
 <template>
   <div>
-   <button  @click="send">Button</button>
+   <button  @click="send">{{buttonName}}</button>
 
   </div>
 </template>
