@@ -1,20 +1,15 @@
 <script setup>
-import { ref, defineEmits ,inject,defineProps} from "vue";
-// const todoText = ref("");
-const props = defineProps(['todoText'])
+import { ref, defineEmits, inject, defineProps } from "vue";
+const props = defineProps(["todoText"]);
 const emit = defineEmits(["send"]);
 const send = () => {
-emit("send", props.todoText);
-
+  emit("send", props.todoText);
 };
-const buttonName = inject('buttonName')
-
-
+const buttonName = inject("buttonName");
 </script>
 <template>
   <div>
-   <button  @click="send">{{buttonName}}</button>
-
+    <button @click="send">{{ buttonName }}</button>
   </div>
 </template>
 

@@ -5,8 +5,8 @@ import TodoLength from "@/components/TodoLength.vue";
 import TodoListData from "./components/TodoListData.vue";
 import { computed, onMounted, provide, ref } from "vue";
 import SendButtonVue from "./components/SendButton.vue";
-const buttonName = ref('Button')
-provide('buttonName','Buttons')
+const buttonName = ref("Button");
+provide("buttonName", "Buttons");
 const TodoList = ref([]);
 
 onMounted(() => {
@@ -20,14 +20,12 @@ onMounted(() => {
 
 const addtodo = (todoText) => {
   if (todoText.length > 4) {
-
     TodoList.value.push({
       id: Date.now(),
       content: `${todoText}`,
     });
     localStorage.setItem("todosItem", JSON.stringify(TodoList.value));
-  } else{ 
- 
+  } else {
   }
 };
 const removeItem = (index) => {
@@ -36,17 +34,17 @@ const removeItem = (index) => {
 };
 
 const todos = computed(() => {
- if(TodoList.value.length > 0 ) {
-     return TodoList.value.length
- }
+  if (TodoList.value.length > 0) {
+    return TodoList.value.length;
+  }
 });
 </script>
 
 <template>
   <HeaderTitle msg="Todo List Vue Js" />
-  <TodoForm  @send="addtodo" />
+  <TodoForm @send="addtodo" />
   <TodoListData @remove="removeItem" :mydata="TodoList" />
-  <TodoLength  :todo="todos" />
+  <TodoLength :todo="todos" />
 </template>
 
 <style lang="scss" scoped>
