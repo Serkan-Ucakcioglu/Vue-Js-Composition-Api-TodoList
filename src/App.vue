@@ -44,7 +44,7 @@ const todos = computed(() => {
 
 <template>
   <HeaderTitle msg="Todo List Vue Js" />
-  <TodoForm  @onsends="addtodo" />
+  <TodoForm  @send="addtodo" />
   <TodoListData @remove="removeItem" :mydata="TodoList" />
   <TodoLength  :todo="todos" />
 </template>

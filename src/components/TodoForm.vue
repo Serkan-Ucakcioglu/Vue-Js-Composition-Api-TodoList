@@ -2,10 +2,10 @@
 import { defineEmits, ref ,defineProps} from "vue";
 import SendButton from "@/components/SendButton.vue";
 const todoText = ref("");
-const emit = defineEmits("onsends");
+const emit = defineEmits("send");
 
-const onsends = () => {
-  emit("onsends", todoText.value);
+const sends = () => {
+  emit("send", todoText.value);
   todoText.value = "";
 };
 </script>
@@ -20,7 +20,7 @@ const onsends = () => {
         class="todoInput"
         type="text"
       />
-      <SendButton   @les="onsends" />
+      <SendButton :todoText="todoText"  @les="sends" />
      
     </div>
   </section>

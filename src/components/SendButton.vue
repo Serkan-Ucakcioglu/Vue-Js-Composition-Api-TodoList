@@ -1,9 +1,10 @@
 <script setup>
-import { ref, defineEmits ,inject} from "vue";
-const todoText = ref("");
+import { ref, defineEmits ,inject,defineProps} from "vue";
+// const todoText = ref("");
+const props = defineProps(['todoText'])
 const emit = defineEmits(["les"]);
 const send = () => {
-emit("les", todoText.value);
+emit("les", props.todoText);
 
 };
 const buttonName = inject('buttonName')
