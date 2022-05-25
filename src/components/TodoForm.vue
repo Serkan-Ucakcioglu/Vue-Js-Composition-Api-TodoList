@@ -1,10 +1,10 @@
 <script setup>
-import { defineEmits, ref, defineProps } from "vue";
+import { defineEmits, ref } from "vue";
 import SendButton from "@/components/SendButton.vue";
 const todoText = ref("");
 const emit = defineEmits("send");
 
-const sends = () => {
+const send = () => {
   emit("send", todoText.value);
   todoText.value = "";
 };
@@ -15,12 +15,12 @@ const sends = () => {
     <div class="todo-form">
       <input
         v-model="todoText"
-        @keydown.enter="sends"
+        @keydown.enter="send"
         placeholder="Write Your Todo ?"
         class="todoInput"
         type="text"
       />
-      <SendButton :todoText="todoText" @send="sends" />
+      <SendButton  @send="send" />
     </div>
   </section>
 </template>
