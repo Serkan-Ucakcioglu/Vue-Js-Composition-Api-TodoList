@@ -16,7 +16,7 @@ const sends = () => {
       <input
         v-model="todoText"
         @keydown.enter="sends"
-        placeholder="Todo Write Please"
+        placeholder="Write Your Todo"
         class="todoInput"
         type="text"
       />
