@@ -1,16 +1,19 @@
 <script setup>
-import { ref, defineEmits, inject } from "vue";
+import { ref, defineEmits, inject, defineProps } from "vue";
 
-const todoText = ref('');
+const props = defineProps(["isDisabled"]);
+
 const emit = defineEmits(["send"]);
 const send = () => {
-  emit("send", todoText.value);
+  emit("send");
 };
 const buttonName = inject("buttonName");
+
+//
 </script>
 <template>
   <div>
-    <button @click="send">{{ buttonName }}</button>
+    <button :disabled="props.isDisabled" @click="send">{{ buttonName }}</button>
   </div>
 </template>
 

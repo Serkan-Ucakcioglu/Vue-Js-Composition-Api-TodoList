@@ -1,9 +1,11 @@
 <script setup>
-import { defineEmits, ref } from "vue";
+import { defineEmits, ref, computed } from "vue";
 import SendButton from "@/components/SendButton.vue";
 const todoText = ref("");
 const emit = defineEmits("send");
-
+let isDisabled = computed(() => {
+  return todoText.value.length > 4 ? false : true;
+});
 const send = () => {
   emit("send", todoText.value);
   todoText.value = "";
@@ -14,13 +16,13 @@ const send = () => {
   <section>
     <div class="todo-form">
       <input
-        v-model="todoText"
+        v-model.trim="todoText"
         @keydown.enter="send"
         placeholder="Write Your Todo ?"
         class="todoInput"
         type="text"
       />
-      <SendButton  @send="send" />
+      <SendButton :isDisabled="isDisabled" @send="send" />
     </div>
   </section>
 </template>
