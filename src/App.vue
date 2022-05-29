@@ -3,49 +3,61 @@ import HeaderTitle from "@/components/HeaderTitle.vue";
 import TodoForm from "@/components/TodoForm.vue";
 import TodoLength from "@/components/TodoLength.vue";
 import TodoListData from "./components/TodoListData.vue";
-import { computed, onMounted, provide, ref } from "vue";
+import { computed, onMounted, watch, ref } from "vue";
 import SendButtonVue from "./components/SendButton.vue";
-const buttonName = ref("Button");
-provide("buttonName", "Button");
 
-const TodoList = ref([]);
+const todoList = ref([]);
 
 onMounted(() => {
   if (localStorage.getItem("todosItem")) {
     let todosItem = JSON.parse(localStorage.getItem("todosItem"));
     todosItem.forEach((todo) => {
-      TodoList.value.push(todo);
+      todoList.value.push(todo);
     });
   }
 });
 
 const addtodo = (todoText) => {
   if (todoText.length > 4) {
-    TodoList.value.push({
+    todoList.value.push({
       id: Date.now(),
       content: `${todoText}`,
+      check: false,
     });
-    localStorage.setItem("todosItem", JSON.stringify(TodoList.value));
+    localStorage.setItem("todosItem", JSON.stringify(todoList.value));
   } else {
   }
 };
 const removeItem = (index) => {
-  TodoList.value.splice(index, 1);
-  localStorage.setItem("todosItem", JSON.stringify(TodoList.value));
+  todoList.value.splice(index, 1);
+  localStorage.setItem("todosItem", JSON.stringify(todoList.value));
 };
 
 const todos = computed(() => {
-  if (TodoList.value.length > 0) {
-    return TodoList.value.length;
+  if (todoList.value.length > 0) {
+    return todoList.value.length;
   }
+});
+watch(
+  todoList,
+  () => {
+    localStorage.setItem("todosItem", JSON.stringify(todoList.value));
+  },
+  { deep: true }
+);
+const filter = computed(() => {
+  return todoList.value.filter((todo) => todo.check == true);
+});
+const filters = computed(() => {
+  return todoList.value.filter((todo) => todo.check == false);
 });
 </script>
 
 <template>
   <HeaderTitle msg="Todo List Vue Js" />
   <TodoForm @send="addtodo" />
-  <TodoListData @remove="removeItem" :mydata="TodoList" />
-  <TodoLength :todo="todos" />
+  <TodoListData @remove="removeItem" :mydata="todoList" />
+  <TodoLength :filters="filters" :filter="filter" :todo="todos" />
 </template>
 
 <style lang="scss" scoped>

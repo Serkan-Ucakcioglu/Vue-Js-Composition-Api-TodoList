@@ -1,14 +1,28 @@
 <script setup>
-import { defineEmits, ref, computed } from "vue";
+import { defineEmits, ref, computed, watch } from "vue";
 import SendButton from "@/components/SendButton.vue";
+
 const todoText = ref("");
 const emit = defineEmits("send");
+
 let isDisabled = computed(() => {
   return todoText.value.length > 4 ? false : true;
 });
 const send = () => {
   emit("send", todoText.value);
   todoText.value = "";
+};
+
+let error = ref(false);
+let inputSuccess = ref(true);
+
+const sends = () => {
+  if (todoText.value.length < 4) {
+    return (error.value = true), (inputSuccess.value = false);
+  } else {
+    send();
+    return (inputSuccess.value = true), (error.value = false);
+  }
 };
 </script>
 
@@ -17,10 +31,12 @@ const send = () => {
     <div class="todo-form">
       <input
         v-model.trim="todoText"
-        @keydown.enter="send"
+        @keyup.enter="sends"
         placeholder="Write Your Todo ?"
+        :class="{ error, inputSuccess }"
         class="todoInput"
         type="text"
+        required
       />
       <SendButton :isDisabled="isDisabled" @send="send" />
     </div>
@@ -44,6 +60,13 @@ section {
       height: 35px;
       border: 2px solid #fff;
       border-radius: 5px;
+      outline: none;
+    }
+    .error {
+      border: 2px solid red;
+    }
+    .inputSuccess {
+      border: 2px solid green;
     }
   }
 }

@@ -1,11 +1,10 @@
 <script setup>
-import { defineProps } from "vue";
-const props = defineProps(["msg"]);
+defineProps(["msg"]);
 </script>
 
 <template>
   <header>
-    <h1>{{ props.msg }}</h1>
+    <h1>{{ msg }}</h1>
   </header>
 </template>
 

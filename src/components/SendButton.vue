@@ -1,19 +1,12 @@
 <script setup>
-import { ref, defineEmits, inject, defineProps } from "vue";
-
-const props = defineProps(["isDisabled"]);
-
+defineProps(["isDisabled"]);
 const emit = defineEmits(["send"]);
-const send = () => {
-  emit("send");
-};
-const buttonName = inject("buttonName");
+const send = () =>  emit("send");
 
-//
 </script>
 <template>
   <div>
-    <button :disabled="props.isDisabled" @click="send">{{ buttonName }}</button>
+    <button :disabled="isDisabled" @click="send">Button</button>
   </div>
 </template>
 
@@ -24,6 +17,7 @@ button {
   height: 40px;
   padding: 5px;
   background: #2196f3;
+  cursor: pointer;
   color: white;
   border-radius: 5px;
 }
