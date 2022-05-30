@@ -70,6 +70,9 @@ ul {
       background: none;
       padding: 8px;
       margin-left: 5px;
+      color: rebeccapurple;
+      font-size: 15px;
+      font-weight: bold;
     }
   }
 }
