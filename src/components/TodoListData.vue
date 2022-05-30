@@ -85,7 +85,6 @@ ul {
   color: #fff;
   margin-left: 15px;
   border-radius: 4px;
-
   height: 35px;
   cursor: pointer;
 }
@@ -103,8 +102,7 @@ ul {
 }
 .active {
   border: 2px solid rgb(233, 150, 122);
-  color: #fff;
-  background: rgb(233, 150, 122);
+  background: #d5f198;
   text-decoration: underline;
 }
 </style>
