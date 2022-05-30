@@ -5,7 +5,6 @@ defineProps(["mydata"]);
 const emit = defineEmits(["remove"]);
 const isActive = ref(true);
 const send = (index) => emit("remove", index);
-
 </script>
 
 <template>
@@ -25,9 +24,9 @@ const send = (index) => emit("remove", index);
         :disabled="todo.show == false"
       />
 
-      <label class="editBtn" @click="todo.show = true">Edit</label>
+      <label class="editBtn" @click="todo.show = true">✍</label>
       <span v-if="todo.show">Edit-On</span>
-      <button class="okBtn" @click="todo.show = false">ok</button>
+      <button class="okBtn" @click="todo.show = false">✓</button>
       <button @click="send(index)" class="todoDelete">Delete</button>
     </li>
   </ul>
@@ -43,9 +42,10 @@ ul {
     align-items: center;
     background: rgb(221, 221, 221);
     padding: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    height: 35px;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     .todoDelete {
       display: inline;
@@ -69,18 +69,17 @@ ul {
       background: none;
       padding: 8px;
       margin-left: 5px;
-      color: rebeccapurple;
       font-size: 15px;
       font-weight: bold;
     }
   }
 }
 .bx {
-  border: 2px solid #0168d9;
+  border: 2px solid #074383;
 }
 .okBtn {
-  padding: 5px;
-  background-color: #0168d9;
+  padding: 8px;
+  background-color: #4b91dc;
   color: #fff;
   margin-left: 15px;
   border-radius: 4px;
@@ -88,20 +87,20 @@ ul {
   cursor: pointer;
 }
 .editBtn {
-  padding: 2px;
+  font-size: 20px;
+  padding: 3px;
   background-color: #e7e7e7;
   color: black;
   margin-left: 10px;
   margin-right: 5px;
   border-radius: 4px;
-  height: 30px;
+  height: 26px;
   line-height: 30px;
   border: 2px solid black;
   cursor: pointer;
 }
 .active {
-  border: 2px solid rgb(233, 150, 122);
-  background: #d5f198;
-  text-decoration: underline;
+  background: #eab34b;
+  color: red;
 }
 </style>

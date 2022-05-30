@@ -14,7 +14,6 @@ defineProps(["todo", "filter", "filters"]);
 .span-list {
     display: flex;
     justify-content: space-between;
-
     span {
         display: flex;
         justify-content: flex-start;

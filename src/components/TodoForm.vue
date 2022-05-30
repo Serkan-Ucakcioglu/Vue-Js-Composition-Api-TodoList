@@ -46,7 +46,7 @@ const sends = () => {
 <style lang="scss" scoped>
 section {
   padding: 10px;
-  background: rgb(173, 150, 150);
+  background: rgb(74, 213, 180);
   margin-bottom: 10px;
   box-sizing: border-box;
 
@@ -66,7 +66,7 @@ section {
       border: 2px solid red;
     }
     .inputSuccess {
-      border: 2px solid green;
+      border: 2px solid rgb(25, 81, 25);
     }
   }
 }
