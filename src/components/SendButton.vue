@@ -6,7 +6,7 @@ const send = () =>  emit("send");
 </script>
 <template>
   <div>
-    <button :disabled="isDisabled" @click="send">Button</button>
+    <button :disabled="isDisabled" @click="send">Add</button>
   </div>
 </template>
 

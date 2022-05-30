@@ -5,8 +5,7 @@ defineProps(["mydata"]);
 const emit = defineEmits(["remove"]);
 const isActive = ref(true);
 const send = (index) => emit("remove", index);
-const todoText = ref("");
-const editSave = () => {};
+
 </script>
 
 <template>
