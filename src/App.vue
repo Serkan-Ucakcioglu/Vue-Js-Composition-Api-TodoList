@@ -21,8 +21,9 @@ const addtodo = (todoText) => {
   if (todoText.length > 4) {
     todoList.value.push({
       id: Date.now(),
-      content: `${todoText}`,
+      title: todoText,
       check: false,
+      show: false,
     });
     localStorage.setItem("todosItem", JSON.stringify(todoList.value));
   } else {
