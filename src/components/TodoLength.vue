@@ -36,6 +36,7 @@ defineProps(["todo", "filter", "filters"]);
     flex-direction: column;
     span{
         margin-bottom: 10px;
+        justify-content: center;
     }
   }
 }
