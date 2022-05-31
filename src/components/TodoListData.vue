@@ -72,7 +72,6 @@ ul {
       padding: 8px;
       margin-left: 5px;
       font-size: 15px;
-      font-weight: bold;
     }
   }
 }
