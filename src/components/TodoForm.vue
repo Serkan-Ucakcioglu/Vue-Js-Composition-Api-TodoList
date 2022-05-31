@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch } from "vue";
+import { ref, computed } from "vue";
 import SendButton from "@/components/SendButton.vue";
 
 const todoText = ref("");
