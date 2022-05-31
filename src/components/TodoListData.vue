@@ -42,7 +42,7 @@ ul {
     width: 93%;
     display: flex;
     align-items: center;
-    background:  #fff;
+    background: #fff;
     padding: 5px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -104,6 +104,5 @@ ul {
 .active {
   background: #b4bfd0;
   color: red;
-
 }
 </style>

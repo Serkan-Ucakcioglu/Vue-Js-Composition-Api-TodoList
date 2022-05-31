@@ -12,8 +12,6 @@ defineProps(["msg"]);
 header {
   width: 100%;
   min-height: 75px;
-  
-
   h1 {
     color: white;
     text-align: center;

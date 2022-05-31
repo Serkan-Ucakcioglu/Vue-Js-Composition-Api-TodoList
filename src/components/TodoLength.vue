@@ -1,4 +1,4 @@
-<script setup>
+<script setuo>
 defineProps(["todo", "filter", "filters"]);
 </script>
 
@@ -29,6 +29,4 @@ defineProps(["todo", "filter", "filters"]);
         margin-right: 10px;
     }
 }
-
-
 </style>

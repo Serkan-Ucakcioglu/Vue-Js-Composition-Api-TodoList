@@ -52,7 +52,7 @@ section {
   .todo-form {
     display: flex;
     justify-content: center;
-    
+
     .todoInput {
       margin-right: 10px;
       width: 92%;
@@ -61,9 +61,11 @@ section {
       border-radius: 5px;
       outline: none;
     }
+
     .error {
       border: 2px solid red;
     }
+
     .inputSuccess {
       border: 2px solid rgb(25, 81, 25);
     }
