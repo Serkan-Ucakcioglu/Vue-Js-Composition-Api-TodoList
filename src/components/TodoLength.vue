@@ -29,4 +29,12 @@ defineProps(["todo", "filter", "filters"]);
         margin-right: 10px;
     }
 }
+@media screen and (max-width: 600px) {
+  .span-list {
+    flex-direction: column;
+    span{
+        margin-bottom: 10px;
+    }
+  }
+}
 </style>
