@@ -12,7 +12,7 @@ defineProps(["msg"]);
 header {
   width: 100%;
   min-height: 75px;
-  background: rgb(97, 197, 111);
+  
 
   h1 {
     color: white;

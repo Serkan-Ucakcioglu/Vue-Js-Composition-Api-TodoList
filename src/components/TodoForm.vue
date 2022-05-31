@@ -46,17 +46,16 @@ const sends = () => {
 <style lang="scss" scoped>
 section {
   padding: 10px;
-  background: rgb(74, 213, 180);
   margin-bottom: 10px;
   box-sizing: border-box;
 
   .todo-form {
     display: flex;
-    width: 100%;
-
+    justify-content: center;
+    
     .todoInput {
       margin-right: 10px;
-      flex: 1;
+      width: 92%;
       height: 35px;
       border: 2px solid #fff;
       border-radius: 5px;

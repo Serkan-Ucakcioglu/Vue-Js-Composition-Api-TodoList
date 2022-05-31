@@ -36,11 +36,13 @@ const send = (index) => emit("remove", index);
 ul {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   li {
+    width: 93%;
     display: flex;
     align-items: center;
-    background: rgb(221, 221, 221);
+    background:  #fff;
     padding: 5px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -100,7 +102,8 @@ ul {
   cursor: pointer;
 }
 .active {
-  background: #eab34b;
+  background: #b4bfd0;
   color: red;
+
 }
 </style>
