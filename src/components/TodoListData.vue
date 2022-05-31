@@ -27,7 +27,7 @@ const send = (index) => emit("remove", index);
       <label class="editBtn" @click="todo.show = true">✍</label>
       <span v-if="todo.show">Edit-On</span>
       <button class="okBtn" @click="todo.show = false">✓</button>
-      <button @click="send(index)" class="todoDelete">Delete</button>
+      <button @click="send(index)" class="todoDelete">🗑️</button>
     </li>
   </ul>
 </template>
@@ -103,5 +103,9 @@ ul {
 .active {
   background: #b4bfd0;
   color: red;
+}
+
+@media screen and (max-width: 375px) {
+
 }
 </style>
