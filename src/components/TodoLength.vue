@@ -21,12 +21,14 @@ defineProps(["todo", "filter", "filters"]);
     span {
         display: flex;
         justify-content: flex-start;
-        padding: 5px 30px;
+        align-items: center;
         border-radius: 5px;
         color: white;
         background: #f49d3a;
         border: 1px solid black;
         margin-right: 10px;
+        padding: 3px;
+        height: 30px;
     }
 }
 @media screen and (max-width: 600px) {
