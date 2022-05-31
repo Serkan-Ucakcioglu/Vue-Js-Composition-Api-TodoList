@@ -106,6 +106,8 @@ ul {
 }
 
 @media screen and (max-width: 375px) {
-
+ .editInput{
+   width: 20%;
+ }
 }
 </style>
