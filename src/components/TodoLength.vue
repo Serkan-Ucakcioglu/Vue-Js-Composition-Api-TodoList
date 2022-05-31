@@ -1,4 +1,4 @@
-<script setuo>
+<script setup>
 defineProps(["todo", "filter", "filters"]);
 </script>
 
